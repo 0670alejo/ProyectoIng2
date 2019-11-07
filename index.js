@@ -8,7 +8,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const morgan = require('morgan');
-
+const router = express.Router();
 const app = express();
 require('./database');
 // require('./passport/local-auth');
@@ -28,8 +28,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'));
-app.use('/', require('./routes/index'));
+app.use('/', require('./routes/index.js'));
 
-module.exports = app;
 app.listen(process.env.port || 3000);
 console.log('listening on port 3000');
+// module.exports = app;
