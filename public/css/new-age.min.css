@@ -361,6 +361,23 @@ section.cta .cta-content h2 {
     font-size: 80px;
   }
 }
+/* corrusel de imagenes para verlas en web */
+.web {
+  padding-left: 240px;
+}
+/* control carrusel, felcha izquierda */
+.webLeft {
+  margin-left: 241px;
+}
+@media (max-width: 360px) {
+  .web {
+    padding-left: 0px;
+  }
+
+  .webLeft {
+    margin-left: 0px;
+  }
+}
 section.cta .overlay {
   position: absolute;
   top: 0;
