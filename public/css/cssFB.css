@@ -75,6 +75,8 @@
   text-decoration: none;
 }
 
+/* resposive */
+
 @media (max-width: 360px) {
   #login {
     padding: 5px 0px;
