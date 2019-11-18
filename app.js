@@ -18,16 +18,11 @@ const cookieSession = require('cookie-session');
 
 const app = express();
 require('./database');
-<<<<<<< HEAD
 //require('./passport/local-auth');
-=======
->>>>>>> Loigin con Google
 
 app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs');
-<<<<<<< HEAD
-=======
 
 app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
@@ -46,7 +41,6 @@ app.use('/profile', profileRoutes);
 app.get('/', (req, res) => {
     res.render('login');
 });
->>>>>>> Loigin con Google
 
 app.use(morgan('dev'));
 
