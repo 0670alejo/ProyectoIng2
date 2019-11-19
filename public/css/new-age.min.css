@@ -169,7 +169,7 @@ section h2 {
   }
   #mainNav .navbar-nav > li > a:focus:hover,
   #mainNav .navbar-nav > li > a:hover {
-    color:rgb(255, 136, 0);
+    color: rgb(255, 136, 0);
   }
   #mainNav.navbar-shrink {
     border-color: rgba(34, 34, 34, 0.1);
@@ -466,6 +466,15 @@ footer ul li a:hover {
   background: #bb2f53;
   background: linear-gradient(#bb2f53, #7f4293);
 }
+.bg-primary2 {
+  background: #46039e;
+  background: linear-gradient(#46039e, #8e39fd);
+}
+.bg-primary3 {
+  background: #039e25;
+  background: linear-gradient(#109e03, #d2fd39);
+}
+/* ----------------------- */
 .text-primary {
   color: #fdcc52;
 }
@@ -494,6 +503,7 @@ footer ul li a:hover {
   border: 1px solid;
   border-color: #d52638;
 }
+
 .btn-outline1.active,
 .btn-outline1:active,
 .btn-outline1:focus,
@@ -501,6 +511,21 @@ footer ul li a:hover {
   color: #fff;
   border-color: #fff;
   background-color: #7f4292;
+}
+
+.btn-outline11 {
+  color: #a6b7db;
+  border: 1px solid;
+  border-color: #a6b7db;
+}
+
+.btn-outline11.active,
+.btn-outline11:active,
+.btn-outline11:focus,
+.btn-outline11:hover {
+  color: #fff;
+  border-color: #fff;
+  background-color: #ff7300;
 }
 
 .btn {

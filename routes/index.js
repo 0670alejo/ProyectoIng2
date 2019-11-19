@@ -52,4 +52,12 @@ router.get('/publicarFoto', (req, res, next) => {
     res.render('publicarFoto.ejs');
 });
 
+router.get('/CRUD_evento', (req, res, next) => {
+    res.render('CRUD_evento.ejs');
+});
+
+router.get('/CRUD_restaurante', (req, res, next) => {
+    res.render('CRUD_restaurante.ejs');
+});
+
 module.exports = router;
