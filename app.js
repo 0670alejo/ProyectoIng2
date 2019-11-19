@@ -15,6 +15,9 @@ const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
 
+require('./config/passport')(passport)
+
+const auth = require('./routes/auth')(passport);
 
 const app = express();
 require('./database');
@@ -36,11 +39,12 @@ app.use(cookieParser());
 //setup routes
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
+app.use('/auth', auth);
 
 //create login route
-app.get('/', (req, res) => {
-    res.render('login');
-});
+//app.get('/', (req, res) => {
+//    res.render('home');
+//});
 
 app.use(morgan('dev'));
 
