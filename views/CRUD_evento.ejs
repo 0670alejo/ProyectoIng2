@@ -26,10 +26,90 @@
 
     <!-- Custom styles for this template -->
     <link href="css/new-age.min.css" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
+    <script>
+
+        $(document).ready(function () {
+            $.post('http://localhost:3001/listEvents', {
+            }, function (data) {
+                list(data.result.data)
+                console.log(data)
+            })
+        });
+
+
+        function list(events) {
+            events.forEach(element => {
+                $('#tableList').append(`<tr><td>` + element.name + `</td><td>` + element.place + `</td><td><a href="javascript:set('` + element.name + `','` + element.place + `')">Modificar</a></td></tr>`);
+            });
+        }
+
+        function set(name, place) {
+            $('#nameUpdate').val(name)
+            $('#placeUpdate').val(place)
+        }
+
+        function save() {
+            let name = $('#name').val();
+            let place = $('#place').val();
+            if (name != "" && place != "") {
+                $.post('http://localhost:3001/saveEvent', {
+                    name: name,
+                    place: place
+                }, function (data) {
+                    alert('Evento creado')
+                    $.post('http://localhost:3001/listEvents', {
+                    }, function (data) {
+                        list(data.result.data)
+                        console.log(data)
+                    })
+                })
+            } else {
+                alert('Ingrese los datos')
+            }
+        }
+
+        function update() {
+            let name = $('#nameUpdate').val();
+            let place = $('#placeUpdate').val();
+            if (name != "" && place != "") {
+                $.post('http://localhost:3001/updateEvent', {
+                    name: name,
+                    place: place
+                }, function (data) {
+                    alert('Evento modificado')
+                    $.post('http://localhost:3001/listEvents', {
+                    }, function (data) {
+                        console.log(data)
+                    })
+                })
+            } else {
+                alert('Ingrese los datos')
+            }
+        }
+
+        function deleteEvent() {
+            let name = $('#nameDelete').val();
+            if (name != "") {
+                $.post('http://localhost:3001/deleteEvent', {
+                    name: name
+                }, function (data) {
+                    alert('Evento eliminado')
+                    $.post('http://localhost:3001/listEvents', {
+                    }, function (data) {
+                    })
+                })
+            } else {
+                alert('Ingrese el nombre del evento')
+            }
+        }
+    </script>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
@@ -116,7 +196,7 @@
                                     <p style="text-align: left;">Nombre del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input id="nomEven" class="form-control" type="text" placeholder="Nombre del Evento">
+                                    <input class="form-control" id="name" type="text" placeholder="Nombre del Evento">
                                 </td>
                             </tr>
                             <!-- <tr>
@@ -142,13 +222,14 @@
                                     <p style="text-align: left;">Lugar del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input id="lugar" class="form-control" type="text" placeholder="Lugar del Evento">
+                                    <input class="form-control" id="place" type="text"
+                                        placeholder="Precio del Producto">
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline1 btn-xl js-scroll-trigger"
+                    <a href="javascript:save()" class="btn btn-outline1 btn-xl js-scroll-trigger"
                         style="font-size: large;">Registrar !</a>
                 </div>
             </div>
@@ -160,7 +241,7 @@
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <h2 class="section-heading" style="color: chocolate;">
-                        Modificar-Evento!
+                        Modificar Evento!
                     </h2>
                     <br>
                     <div class="badges">
@@ -179,7 +260,8 @@
                                     <p style="text-align: left; color: chocolate;">Nombre del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input id="nomEven" class="form-control" type="text" placeholder="Nombre del Evento">
+                                    <input class="form-control" id="nameUpdate" type="text"
+                                        placeholder="Nombre del Evento">
                                 </td>
                             </tr>
                             <!-- <tr>
@@ -205,14 +287,14 @@
                                     <p style="text-align: left; color: chocolate;">Lugar del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input id="lugar" class="form-control" type="text" placeholder="Lugar del Evento">
+                                    <input class="form-control" id="placeUpdate" type="text" placeholder="Lugar">
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline1 btn-xl js-scroll-trigger"
-                        style="font-size: large;">Reistrar !</a>
+                    <a href="javascript:update()" class="btn btn-outline1 btn-xl js-scroll-trigger"
+                        style="font-size: large;">Modificar!</a>
                 </div>
             </div>
         </div>
@@ -223,7 +305,7 @@
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <h2 class="section-heading" style="color: rgb(0, 0, 0);">
-                        Eliminar-Evento!
+                        Eliminar Evento!
                     </h2>
                     <br>
                     <div class="badges">
@@ -242,14 +324,15 @@
                                     <p style="text-align: left;color: rgb(0, 0, 0);">Nombre del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input id="nomEven" class="form-control" type="text" placeholder="Nombre del Evento">
+                                    <input class="form-control" id="nameDelete" type="text"
+                                        placeholder="Nombre del Evento">
                                 </td>
                             </tr>
                         </table>
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger"
-                        style="font-size: large;">Elimnar !</a>
+                    <a href="javascript:deleteEvent()" class="btn btn-outline11 btn-xl js-scroll-trigger"
+                        style="font-size: large;">Eliminar!</a>
                 </div>
             </div>
         </div>
@@ -283,11 +366,12 @@
                         <!-- <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a> -->
                     </div>
                     <div class="col-md-6 mx-auto text-center">
-                        <table border="1">
+                        <table id="tableList" border="1">
                             <thead>
                                 <tr>
                                     <th> NOMBRE </th>
                                     <th> LUGAR </th>
+                                    <th> ACCION </th>
                                 </tr>
                             </thead>
                             <tbody id="listaEvento">
@@ -342,9 +426,7 @@
             </ul>
         </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
