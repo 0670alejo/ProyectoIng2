@@ -95,7 +95,7 @@ router.get('/CRUD_evento', (req, res, next) => {
     res.render('CRUD_evento.ejs');
 });
 
-router.get('/restaurant', (req, res, next) => {
+router.get('/CRUD_restaurante', (req, res, next) => {
     res.render('CRUD_restaurante.ejs');
 });
 
