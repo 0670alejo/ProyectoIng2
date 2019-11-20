@@ -10,18 +10,26 @@ const passport = require('passport');
 const morgan = require('morgan');
 const keys = require('./keys');
 
+const bodyparser = require('body-parser');
+
 const authRoutes = require('./routes/auth-routes');
+const restaurantRoutes = require('./routes/restaurant-routes');
 const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
 
-require('./config/passport')(passport)
+require('./config/passport')(passport);
 
 const auth = require('./routes/auth')(passport);
 
 const app = express();
 require('./database');
 //require('./passport/local-auth');
+
+app.use(bodyparser.urlencoded({
+    extended: true
+}));
+app.use(bodyparser.json());
 
 app.set('views', path.join(__dirname, 'views'));
 
@@ -40,6 +48,7 @@ app.use(cookieParser());
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/auth', auth);
+//app.use('/restaurant', restaurantRoutes);
 
 //create login route
 //app.get('/', (req, res) => {

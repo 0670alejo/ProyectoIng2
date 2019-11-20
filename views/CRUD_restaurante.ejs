@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta name="google-signin-client_id"
-        content="748278365838-l8v3r1fm79p74igar5je50iuucm9n01i.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="748278365838-l8v3r1fm79p74igar5je50iuucm9n01i.apps.googleusercontent.com">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -30,13 +29,12 @@
 </head>
 
 <body id="page-top">
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top"><b>Votalo.com</b></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
@@ -65,9 +63,7 @@
                 <div class="col-lg-7 my-auto">
                     <div class="header-content mx-auto">
                         <h1 class="mb-5">
-                            Bienvenido a Votalo.com, ven y vota por tu comida favorita si ya tiene el codigo de votacion
-                            haz click en
-                            el botón.
+                            Bienvenido a Votalo.com, ven y vota por tu comida favorita si ya tiene el codigo de votacion haz click en el botón.
                         </h1>
                         <!-- <a href="login.html" class="btn btn-outline btn-xl js-scroll-trigger">VOTAR!</a> -->
                     </div>
@@ -90,7 +86,6 @@
             </div>
         </div>
     </header>
-
     <section class="download bg-primary text-center" id="download">
         <div class="container">
             <div class="row">
@@ -109,51 +104,95 @@
                         <!-- <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a> -->
                     </div>
                     <div class="col-md-8 mx-auto text-center">
+
                         <table style="padding-left: 20px;">
-                            <tr>
-                                <td>
-                                    <p style="text-align: left; font-size: 24px;">Restaurante: </p>
-                                </td>
-                                <td style="padding-left: 50px;">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Nombre del Restaurante">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 5px;"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left; font-size: 24px;">Producto: </p>
-                                </td>
-                                <td style="padding-left: 50px;">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Nombre del Producto">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 5px;"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left; font-size: 24px;">Precio: </p>
-                                </td>
-                                <td style="padding-left: 50px;">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Precio del Producto">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 5px;"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left; font-size: 24px;">Evento: </p>
-                                </td>
-                                <td style="padding-left: 50px;">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
-                                        </div>
-                                        <select style="border-radius: 6px;" class="custom-select"
-                                            id="inputGroupSelect01">
+                            <form action="/restaurant" method="POST">
+                                <input type="hidden" name="_id" value="{{restaurant._id}}">
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nickname: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="nickname" placeholder="Nickname" value="{{restaurant.nickname}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.nickname}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Password: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="password" name="password" placeholder="Password" value="{{restaurant.password}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.password}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nombre del Restaurante: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="name" placeholder="Nombre del Restaurante" value="{{restaurant.name}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.name}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Direccion: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="address" placeholder="Direccion del Restaurante" value="{{restaurant.address}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.address}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Telefono: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="phone" placeholder="Telefono" value="{{restaurant.phone}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.phone}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Ciudad: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="city" placeholder="Ciudad" value="{{restaurant.city}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.city}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nombre del Producto: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="product" placeholder="Nombre del Producto" value="{{restaurant.product}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.product}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Precio del Producto: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="price" placeholder="Precio del Producto" value="{{restaurant.price}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.price}}</div>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left; font-size: 24px;">Evento: </p>
+                                    </td>
+                                    <td style="padding-left: 50px;">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
+                                            </div>
+                                            <select style="border-radius: 6px;" class="custom-select" id="inputGroupSelect01">
                                             <option selected>SELECCIONAR</option>
                                             <option value="1">Buger Master</option>
                                             <option value="2">Sushi Master</option>
@@ -162,17 +201,19 @@
                                             <option value="5">Perro Master</option>
                                             <option value="6">Arepa Master</option>
                                         </select>
-                                    </div>
-                                    <!-- <select class="form-control">
+                                        </div>
+                                        <!-- <select class="form-control">
                                         <option>SELECCIONAR</option>
                                     </select> -->
-                                </td>
-                            </tr>
+                                    </td>
+                                </tr>
+                            </form>
                         </table>
+
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline1 btn-xl js-scroll-trigger"
-                        style="font-size: large;">Registrar !</a>
+                    <button type="submit" class="btn btn-outline1 btn-xl js-scroll-trigger" style="font-size: large;">Registrar</button>
+                    <!-- <a href="login.html" class="btn btn-outline1 btn-xl js-scroll-trigger" style="font-size: large;">Registrar !</a> -->
                 </div>
             </div>
         </div>
@@ -230,8 +271,7 @@
                         </table>
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger"
-                        style="font-size: large;">Modificar !</a>
+                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger" style="font-size: large;">Modificar !</a>
                 </div>
             </div>
         </div>
@@ -267,8 +307,7 @@
                         </table>
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger"
-                        style="font-size: large;">Eliminar !</a>
+                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger" style="font-size: large;">Eliminar !</a>
                 </div>
             </div>
         </div>
@@ -325,8 +364,7 @@
     <section class="contact bg-primary" id="contact">
         <div class="container">
             <h2>Síguenos
-                <i class="fas fa-heart"></i>
-                en nuestras Redes!</h2>
+                <i class="fas fa-heart"></i> en nuestras Redes!</h2>
             <ul class="list-inline list-social">
                 <li class="list-inline-item social-twitter">
                     <a href="#">

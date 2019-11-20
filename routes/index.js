@@ -4,6 +4,7 @@ var request = require('request');
 const passport = require('passport');
 const mongoose = require('mongoose');
 
+
 var loggedin = function(req, res, next) {
     if (req.isAuthenticated()) {
         next();
@@ -94,7 +95,7 @@ router.get('/CRUD_evento', (req, res, next) => {
     res.render('CRUD_evento.ejs');
 });
 
-router.get('/CRUD_restaurante', (req, res, next) => {
+router.get('/restaurant', (req, res, next) => {
     res.render('CRUD_restaurante.ejs');
 });
 
