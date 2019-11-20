@@ -27,9 +27,9 @@
     <!-- Custom styles for this template -->
     <link href="css/new-age.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
 </head>
 
 <body id="page-top">
@@ -64,6 +64,7 @@
                     place: place
                 }, function (data) {
                     alert('Evento creado')
+                    limpiar()
                     $.post('http://localhost:3001/listEvents', {
                     }, function (data) {
                         list(data.result.data)
@@ -84,6 +85,7 @@
                     place: place
                 }, function (data) {
                     alert('Evento modificado')
+                    limpiar()
                     $.post('http://localhost:3001/listEvents', {
                     }, function (data) {
                         console.log(data)
@@ -101,6 +103,7 @@
                     name: name
                 }, function (data) {
                     alert('Evento eliminado')
+                    limpiar()
                     $.post('http://localhost:3001/listEvents', {
                     }, function (data) {
                     })
@@ -108,6 +111,11 @@
             } else {
                 alert('Ingrese el nombre del evento')
             }
+        }
+
+        function limpiar() {
+            $("#nomEven").val("");
+            $("#lugar").val("");
         }
     </script>
     <!-- Navigation -->
@@ -426,7 +434,7 @@
             </ul>
         </div>
     </footer>
-    
+
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Plugin JavaScript -->
