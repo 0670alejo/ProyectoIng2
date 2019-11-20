@@ -14,6 +14,7 @@ const authRoutes = require('./routes/auth-routes');
 const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
+const eventRoutes = require('./routes/event-routes');
 
 require('./config/passport')(passport)
 
@@ -40,6 +41,7 @@ app.use(cookieParser());
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/auth', auth);
+app.use('/events', eventRoutes);
 
 //create login route
 //app.get('/', (req, res) => {
