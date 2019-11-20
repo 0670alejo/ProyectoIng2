@@ -28,6 +28,8 @@ function insertRecord(req, res) {
     restaurant.prodcut = req.body.prodcut;
     restaurant.price = req.body.price;
     restaurant.event = req.body.event;
+    console.log(restaurant);
+
     restaurant.save((err, doc) => {
         if (!err) {
             res.redirect('/restaurant');
