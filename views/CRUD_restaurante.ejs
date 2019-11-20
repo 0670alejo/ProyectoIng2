@@ -117,7 +117,7 @@
                                         <p style="text-align: left;">Nickname: </p>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="text" name="nickname" placeholder="Nickname"
+                                        <input id="usuario" class="form-control" type="text" name="nickname" placeholder="Nickname"
                                             value="{{restaurant.nickname}}">
                                     </td>
                                     <div class="text-danger">{{restaurant.nickname}}</div>
@@ -127,7 +127,7 @@
                                         <p style="text-align: left;">Password: </p>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="password" name="password"
+                                        <input id="contra" class="form-control" type="password" name="password"
                                             placeholder="Password" value="{{restaurant.password}}">
                                     </td>
                                     <div class="text-danger">{{restaurant.password}}</div>
@@ -137,7 +137,7 @@
                                         <p style="text-align: left;">Nombre del Restaurante: </p>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="text" name="name"
+                                        <input id="nombreRe" class="form-control" type="text" name="name"
                                             placeholder="Nombre del Restaurante" value="{{restaurant.name}}">
                                     </td>
                                     <div class="text-danger">{{restaurant.name}}</div>
@@ -147,7 +147,7 @@
                                         <p style="text-align: left;">Direccion: </p>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="text" name="address"
+                                        <input id="dire" class="form-control" type="text" name="address"
                                             placeholder="Direccion del Restaurante" value="{{restaurant.address}}">
                                     </td>
                                     <div class="text-danger">{{restaurant.address}}</div>
@@ -157,7 +157,7 @@
                                         <p style="text-align: left;">Telefono: </p>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="text" name="phone" placeholder="Telefono"
+                                        <input id="tel" class="form-control" type="text" name="phone" placeholder="Telefono"
                                             value="{{restaurant.phone}}">
                                     </td>
                                     <div class="text-danger">{{restaurant.phone}}</div>
@@ -167,7 +167,7 @@
                                         <p style="text-align: left;">Ciudad: </p>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="text" name="city" placeholder="Ciudad"
+                                        <input id="ciudad" class="form-control" type="text" name="city" placeholder="Ciudad"
                                             value="{{restaurant.city}}">
                                     </td>
                                     <div class="text-danger">{{restaurant.city}}</div>
@@ -177,7 +177,7 @@
                                         <p style="text-align: left;">Nombre del Producto: </p>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="text" name="product"
+                                        <input id="nomPro" class="form-control" type="text" name="product"
                                             placeholder="Nombre del Producto" value="{{restaurant.product}}">
                                     </td>
                                     <div class="text-danger">{{restaurant.product}}</div>
@@ -187,7 +187,7 @@
                                         <p style="text-align: left;">Precio del Producto: </p>
                                     </td>
                                     <td>
-                                        <input class="form-control" type="text" name="price"
+                                        <input id="precio" class="form-control" type="text" name="price"
                                             placeholder="Precio del Producto" value="{{restaurant.price}}">
                                     </td>
                                     <div class="text-danger">{{restaurant.price}}</div>
@@ -204,7 +204,7 @@
                                             <div class="input-group-prepend">
                                                 <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
                                             </div>
-                                            <select style="border-radius: 6px;" class="custom-select"
+                                            <select id="seleEven" style="border-radius: 6px;" class="custom-select"
                                                 id="inputGroupSelect01">
                                                 <option selected>SELECCIONAR</option>
                                                 <option value="1">Buger Master</option>
@@ -510,6 +510,19 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
+    <script>
+        function limpiar() {
+            $("#usuario").val("");
+            $("#contra").val("");
+            $("#nombreRe").val("");
+            $("#dire").val("");
+            $("#tel").val("");
+            $("#ciudad").val("");
+            $("#nomPro").val("");
+            $("#precio").val("");
+            $("#seleEven").val(0);
+        }
+    </script>
 
 </body>
 

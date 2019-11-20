@@ -116,7 +116,7 @@
                                     <p style="text-align: left;">Nombre del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input class="form-control" type="text" placeholder="Nombre del Evento">
+                                    <input id="nomEven" class="form-control" type="text" placeholder="Nombre del Evento">
                                 </td>
                             </tr>
                             <!-- <tr>
@@ -142,7 +142,7 @@
                                     <p style="text-align: left;">Lugar del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input class="form-control" type="text" placeholder="Lugar del Evento">
+                                    <input id="lugar" class="form-control" type="text" placeholder="Lugar del Evento">
                                 </td>
                             </tr>
                         </table>
@@ -179,7 +179,7 @@
                                     <p style="text-align: left; color: chocolate;">Nombre del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input class="form-control" type="text" placeholder="Nombre del Evento">
+                                    <input id="nomEven" class="form-control" type="text" placeholder="Nombre del Evento">
                                 </td>
                             </tr>
                             <!-- <tr>
@@ -205,7 +205,7 @@
                                     <p style="text-align: left; color: chocolate;">Lugar del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input class="form-control" type="text" placeholder="Lugar del Evento">
+                                    <input id="lugar" class="form-control" type="text" placeholder="Lugar del Evento">
                                 </td>
                             </tr>
                         </table>
@@ -242,7 +242,7 @@
                                     <p style="text-align: left;color: rgb(0, 0, 0);">Nombre del Evento: </p>
                                 </td>
                                 <td style="padding-left: 50px;">
-                                    <input class="form-control" type="text" placeholder="Nombre del Evento">
+                                    <input id="nomEven" class="form-control" type="text" placeholder="Nombre del Evento">
                                 </td>
                             </tr>
                         </table>
@@ -352,6 +352,12 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
+    <script>
+        function limpiar() {
+            $("#nomEven").val("");
+            $("#lugar").val("");
+        }
+    </script>
 
 </body>
 
