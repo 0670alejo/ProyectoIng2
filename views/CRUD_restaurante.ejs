@@ -217,14 +217,14 @@
                                                 <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
                                             </div>
                                             <select style="border-radius: 6px;" class="custom-select" id="inputGroupSelect01">
-                                            <option selected>SELECCIONAR</option>
-                                            <option value="1">Buger Master</option>
-                                            <option value="2">Sushi Master</option>
-                                            <option value="3">Pizza Master</option>
-                                            <option value="4">Helado Master</option>
-                                            <option value="5">Perro Master</option>
-                                            <option value="6">Arepa Master</option>
-                                        </select>
+                                                <option selected>SELECCIONAR</option>
+                                                <option value="1">Buger Master</option>
+                                                <option value="2">Sushi Master</option>
+                                                <option value="3">Pizza Master</option>
+                                                <option value="4">Helado Master</option>
+                                                <option value="5">Perro Master</option>
+                                                <option value="6">Arepa Master</option>
+                                            </select>
                                         </div>
                                         <!-- <select class="form-control">
                                         <option>SELECCIONAR</option>
@@ -261,36 +261,108 @@
                     </div>
                     <div class="col-md-8 mx-auto text-center">
                         <table style="padding-left: 20px;">
-                            <tr>
-                                <td>
-                                    <p style="text-align: left;color: chocolate; font-size: 24px;">Restaurante: </p>
-                                </td>
-                                <td style="padding-left: 50px;">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Nombre del Restaurante">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 5px;"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left;color: chocolate; font-size: 24px;">Producto: </p>
-                                </td>
-                                <td style="padding-left: 50px;">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Nombre del Producto">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="padding-bottom: 5px;"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left;color: chocolate; font-size: 24px;">Precio: </p>
-                                </td>
-                                <td style="padding-left: 50px;">
-                                    <input class="form-control form-control-lg" type="text" placeholder="Precio del Producto">
-                                </td>
-                            </tr>
+                            <form action="/restaurant" method="POST">
+                                <input type="hidden" name="_id" value="{{restaurant._id}}">
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nickname: </p>
+                                    </td>
+                                    <td>
+                                        <input id="usuario" class="form-control" type="text" name="nickname" placeholder="Nickname" value="{{restaurant.nickname}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.nickname}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Password: </p>
+                                    </td>
+                                    <td>
+                                        <input id="contra" class="form-control" type="password" name="password" placeholder="Password" value="{{restaurant.password}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.password}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nombre del Restaurante: </p>
+                                    </td>
+                                    <td>
+                                        <input id="nombreRe" class="form-control" type="text" name="name" placeholder="Nombre del Restaurante" value="{{restaurant.name}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.name}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Direccion: </p>
+                                    </td>
+                                    <td>
+                                        <input id="dire" class="form-control" type="text" name="address" placeholder="Direccion del Restaurante" value="{{restaurant.address}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.address}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Telefono: </p>
+                                    </td>
+                                    <td>
+                                        <input id="tel" class="form-control" type="text" name="phone" placeholder="Telefono" value="{{restaurant.phone}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.phone}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Ciudad: </p>
+                                    </td>
+                                    <td>
+                                        <input id="ciudad" class="form-control" type="text" name="city" placeholder="Ciudad" value="{{restaurant.city}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.city}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nombre del Producto: </p>
+                                    </td>
+                                    <td>
+                                        <input id="nomPro" class="form-control" type="text" name="product" placeholder="Nombre del Producto" value="{{restaurant.product}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.product}}</div>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Precio del Producto: </p>
+                                    </td>
+                                    <td>
+                                        <input id="precio" class="form-control" type="text" name="price" placeholder="Precio del Producto" value="{{restaurant.price}}">
+                                    </td>
+                                    <div class="text-danger">{{restaurant.price}}</div>
+                                </tr>
+                                <tr>
+                                    <td style="padding-bottom: 5px;"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left; font-size: 24px;">Evento: </p>
+                                    </td>
+                                    <td style="padding-left: 50px;">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
+                                            </div>
+                                            <select style="border-radius: 6px;" class="custom-select" id="inputGroupSelect01">
+                                                <option selected>SELECCIONAR</option>
+                                                <option value="1">Buger Master</option>
+                                                <option value="2">Sushi Master</option>
+                                                <option value="3">Pizza Master</option>
+                                                <option value="4">Helado Master</option>
+                                                <option value="5">Perro Master</option>
+                                                <option value="6">Arepa Master</option>
+                                            </select>
+                                        </div>
+                                        <!-- <select class="form-control">
+                                            <option>SELECCIONAR</option>
+                                        </select> -->
+                                    </td>
+                                </tr>
+                            </form>
                         </table>
                     </div>
                     <br>
@@ -321,7 +393,8 @@
                         <table style="padding-left: 20px;">
                             <tr>
                                 <td>
-                                    <p style="text-align: left;color: rgb(255, 106, 0); font-size: 24px;">Restaurante: </p>
+                                    <p style="text-align: left;color: rgb(255, 106, 0); font-size: 24px;">Restaurante:
+                                    </p>
                                 </td>
                                 <td style="padding-left: 50px;">
                                     <input class="form-control form-control-lg" type="text" placeholder="Nombre del Restaurante">
@@ -434,6 +507,19 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
+    <script>
+        function limpiar() {
+            $("#usuario").val("");
+            $("#contra").val("");
+            $("#nombreRe").val("");
+            $("#dire").val("");
+            $("#tel").val("");
+            $("#ciudad").val("");
+            $("#nomPro").val("");
+            $("#precio").val("");
+            $("#inputGroupSelect01").val(0);
+        }
+    </script>
 
 </body>
 

@@ -22,6 +22,8 @@ router.get('/logout', (req, res, next) => {
     res.send('/');
 });
 
+
+
 //auth with google
 router.get('/google', passport.authenticate('google', {
     scope: ['profile']
@@ -95,7 +97,7 @@ router.get('/CRUD_evento', (req, res, next) => {
     res.render('CRUD_evento.ejs');
 });
 
-router.get('/restaurant', (req, res, next) => {
+router.get('/CRUD_restaurante', (req, res, next) => {
     res.render('CRUD_restaurante.ejs');
 });
 
