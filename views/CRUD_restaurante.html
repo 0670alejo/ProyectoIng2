@@ -2,8 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta name="google-signin-client_id"
-        content="748278365838-l8v3r1fm79p74igar5je50iuucm9n01i.apps.googleusercontent.com">
+    <meta name="google-signin-client_id" content="748278365838-l8v3r1fm79p74igar5je50iuucm9n01i.apps.googleusercontent.com">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -34,9 +33,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand js-scroll-trigger" href="#page-top"><b>Votalo.com</b></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars"></i>
             </button>
@@ -65,9 +62,7 @@
                 <div class="col-lg-7 my-auto">
                     <div class="header-content mx-auto">
                         <h1 class="mb-5">
-                            Bienvenido a Votalo.com, ven y vota por tu comida favorita si ya tiene el codigo de votacion
-                            haz click en
-                            el botón.
+                            Bienvenido a Votalo.com, ven y vota por tu comida favorita si ya tiene el codigo de votacion haz click en el botón.
                         </h1>
                         <!-- <a href="login.html" class="btn btn-outline btn-xl js-scroll-trigger">VOTAR!</a> -->
                     </div>
@@ -109,58 +104,98 @@
                         <!-- <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a> -->
                     </div>
                     <div class="col-md-8 mx-auto text-center">
-                        <table>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left;">Nombre del Restaurante: </p>
-                                </td>
-                                <td>
-                                    <input class="form-control" type="text" placeholder="Nombre del Restaurante">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left;">Nombre del Producto: </p>
-                                </td>
-                                <td>
-                                    <input class="form-control" type="text" placeholder="Nombre del Producto">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left;">Precio del Producto: </p>
-                                </td>
-                                <td>
-                                    <input class="form-control" type="text" placeholder="Precio del Producto">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p style="text-align: left;">Evento del Producto: </p>
-                                </td>
-                                <td>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
-                                        </div>
-                                        <select style="border-radius: 6px;" class="custom-select"
-                                            id="inputGroupSelect01">
+                        <form action="/restaurant" method="post">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nickname: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="nickname" placeholder="Nickname">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Password: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="password" name="password" placeholder="Password">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nombre del Restaurante: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="name" placeholder="Nombre del Restaurante">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Direccion: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="address" placeholder="Direccion del Restaurante">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Telefono: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="phone" placeholder="Telefono">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Ciudad: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" name="city" placeholder="Ciudad">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Nombre del Producto: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" placeholder="Nombre del Producto">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Precio del Producto: </p>
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" placeholder="Precio del Producto">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p style="text-align: left;">Evento del Producto: </p>
+                                    </td>
+                                    <td>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <!-- <label class="input-group-text" for="inputGroupSelect01">Options</label> -->
+                                            </div>
+                                            <select style="border-radius: 6px;" class="custom-select" id="inputGroupSelect01">
                                             <option selected>Choose...</option>
                                             <option value="1">One</option>
                                             <option value="2">Two</option>
                                             <option value="3">Three</option>
                                         </select>
-                                    </div>
-                                    <!-- <select class="form-control">
+                                        </div>
+                                        <!-- <select class="form-control">
                                         <option>SELECCIONAR</option>
                                     </select> -->
-                                </td>
-                            </tr>
-                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline1 btn-xl js-scroll-trigger"
-                        style="font-size: large;">Reistrar !</a>
+                    <a href="login.html" class="btn btn-outline1 btn-xl js-scroll-trigger" style="font-size: large;">Reistrar !</a>
                 </div>
             </div>
         </div>
@@ -212,8 +247,7 @@
                         </table>
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger"
-                        style="font-size: large;">Modificar !</a>
+                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger" style="font-size: large;">Modificar !</a>
                 </div>
             </div>
         </div>
@@ -249,8 +283,7 @@
                         </table>
                     </div>
                     <br>
-                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger"
-                        style="font-size: large;">Elimnar !</a>
+                    <a href="login.html" class="btn btn-outline11 btn-xl js-scroll-trigger" style="font-size: large;">Elimnar !</a>
                 </div>
             </div>
         </div>
@@ -307,8 +340,7 @@
     <section class="contact bg-primary" id="contact">
         <div class="container">
             <h2>Síguenos
-                <i class="fas fa-heart"></i>
-                en nuestras Redes!</h2>
+                <i class="fas fa-heart"></i> en nuestras Redes!</h2>
             <ul class="list-inline list-social">
                 <li class="list-inline-item social-twitter">
                     <a href="#">

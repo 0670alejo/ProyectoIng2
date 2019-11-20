@@ -10,19 +10,27 @@ const passport = require('passport');
 const morgan = require('morgan');
 const keys = require('./keys');
 
+const bodyparser = require('body-parser');
+
 const authRoutes = require('./routes/auth-routes');
+const restaurantRoutes = require('./routes/restaurant-routes');
 const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./config/passport-setup');
 const cookieSession = require('cookie-session');
 const eventRoutes = require('./routes/event-routes');
 
-require('./config/passport')(passport)
+require('./config/passport')(passport);
 
 const auth = require('./routes/auth')(passport);
 
 const app = express();
 require('./database');
 //require('./passport/local-auth');
+
+app.use(bodyparser.urlencoded({
+    extended: true
+}));
+app.use(bodyparser.json());
 
 app.set('views', path.join(__dirname, 'views'));
 
