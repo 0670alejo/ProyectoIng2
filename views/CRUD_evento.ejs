@@ -38,11 +38,25 @@
                 console.log(data)
             })
         });
+        function eliminaFilas() {
+            //OBTIENE EL NÚMERO DE FILAS DE LA TABLA
+            $("#tableList").children().remove()
+        };
 
 
         function list(events) {
+            eliminaFilas()
+            $('#tableList').append(`<thead>
+                                <tr>
+                                    <th> NOMBRE </th>
+                                    <th> LUGAR </th>
+                                    <th> ACCION </th>
+                                </tr>
+                            </thead>`)
             events.forEach(element => {
-                $('#tableList').append(`<tr><td>` + element.name + `</td><td>` + element.place + `</td><td><a href="javascript:set('` + element.name + `','` + element.place + `')">Modificar</a></td></tr>`);
+                $('#tableList').append(`
+                
+                <tr>class="otra" <td>` + element.name + `</td><td>` + element.place + `</td><td><a href="javascript:set('` + element.name + `','` + element.place + `')">Modificar</a></td></tr>`);
             });
         }
 
@@ -110,6 +124,8 @@
         function limpiar() {
             $("#nomEven").val("");
             $("#lugar").val("");
+            $("#nameUpdate").val("");
+            $("#placeUpdate").val("");
         }
     </script>
     <!-- Navigation -->
@@ -358,7 +374,7 @@
                         <!-- <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a> -->
                     </div>
                     <div class="col-md-6 mx-auto text-center">
-                        <table id="tableList" border="1">
+                        <table class="table table-hover" id="tableList" border="1">
                             <thead>
                                 <tr>
                                     <th> NOMBRE </th>
